@@ -1,0 +1,4 @@
+- if @videos.empty?
+  %p= "could not any videos for search term: \"#{params[:search_term]}\""
+- else
+= render 'videos', videos: @videos
