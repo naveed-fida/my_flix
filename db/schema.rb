@@ -11,13 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170416083032) do
+ActiveRecord::Schema.define(version: 20170520104429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string "name"
+  end
+
+  create_table "queue_items", force: true do |t|
+    t.integer  "position"
+    t.integer  "video_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.text    "content"
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "video_id"
   end
 
   create_table "users", force: true do |t|

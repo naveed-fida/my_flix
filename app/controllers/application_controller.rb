@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
   def require_user
     if !logged_in?
       flash[:error] = "Please sign in to access"
-      redirect_to sing_in_path
+      redirect_to sign_in_path
     end
   end
 

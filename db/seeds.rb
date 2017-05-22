@@ -52,3 +52,9 @@ fry_and_laurie = {
 [the_wire, star_trek, fry_and_laurie, pride_and_prejudice, faulty_towers]. each do |vid|
   3.times { Video.create(vid) }
 end
+
+User.create(name: 'Naveed Fida', email: 'naveedfida01@gmail.com', password: 'password')
+
+Review.create(content: "This is a great movie isn't it", rating: 5, video: Video.find_by(title: 'A bit of Fry and Laurie'), reviewer: User.first)
+
+Review.create(content: "This is mostly a waste of time except for a few laughs", rating: 2, video: Video.find_by(title: 'A bit of Fry and Laurie'), reviewer: User.first)

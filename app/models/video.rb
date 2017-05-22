@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+  has_many :reviews
+  has_many :queue_items
   belongs_to :category
   default_scope {order('created_at DESC')}
 
